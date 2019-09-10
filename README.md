@@ -3,6 +3,7 @@ Sample project to demonstrate issues with coroutines when using dd-java-agent 0.
 
 # Versions
 Kotlin version is `1.3.50`
+
 DD agent version is `0.32.0~e158f110`
 
 # Start the application
