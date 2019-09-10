@@ -1,6 +1,12 @@
 # dd-tracing-coroutines-issue
 Sample project to demonstrate issues with coroutines when using dd-java-agent 0.32.0
 
+# Issue description
+
+As you can see, parent span is lost in the coroutine. Same issue happens with automated instrumentario (which is discovered on our datadog APM dashboard). Right now only spans created within the same thread are being displaying.
+
+Also if we create spans in the coroutine we suggest it to be a child of the parent span. But span is not set yet (null in the log). So I assume they are created as parent spans and either wrongly reported as parent ones or ignored as expired ones.
+
 # Versions
 Kotlin version is `1.3.50`
 
